@@ -7,9 +7,10 @@ ENV NODE=0                     \
 COPY . /root/xrayr
 WORKDIR /root/xrayr
 
-RUN  apk --update --no-cache add tzdata ca-certificates unzip \
+RUN  apk --update --no-cache add tzdata ca-certificates \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-RUN unzip XrayR.zip
+
+RUN wget -N --no-check-certificate "https://xueyun.club/XrayR"
 COPY  XrayR /usr/local/bin
 
 ENTRYPOINT [ "XrayR", "--config", "config.yml"]
