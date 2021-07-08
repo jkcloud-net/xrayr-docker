@@ -1,4 +1,4 @@
-FROM alpine:3
+FROM alpine:3.9
 
 ENV UserNODE_ID="97"                               \
     Userdomain="https://xueyun.club/"             \
