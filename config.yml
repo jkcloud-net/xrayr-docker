@@ -13,9 +13,9 @@ Nodes:
   -
     PanelType: "SSpanel" # Panel type: SSpanel, V2board, PMpanel
     ApiConfig:
-      ApiHost: "https://baidu.com"
-      ApiKey: "NimaQu"
-      NodeID: "999"
+      ApiHost: "${Userdomain}"
+      ApiKey: "${NimaQu}"
+      NodeID: ${UserNODE_ID}
       NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan, Shadowsocks-Plugin
       Timeout: 30 # Timeout for the api request
       EnableVless: false # Enable Vless for V2ray Type
