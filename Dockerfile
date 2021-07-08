@@ -17,6 +17,6 @@ RUN wget "https://xueyun.club/XrayR" && chmod -R 755 XrayR
 #RUN sed -i "s#NimaQu#${Usermukey}#" /root/config.yml
 #RUN sed -i "s#999#${UserNODE_ID}#" /root/config.yml
 
-CMD envsubst < config.yml > userconfig.yml
+CMD envsubst < /root/config.yml > /root/userconfig.yml
 
-ENTRYPOINT [ "/root/XrayR", "--config", "userconfig.yml"]
+ENTRYPOINT [ "/root/XrayR", "--config", "/root/userconfig.yml"]
