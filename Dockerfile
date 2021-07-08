@@ -8,7 +8,8 @@ COPY . /root
 WORKDIR /root
 
 RUN  apk --update --no-cache add tzdata ca-certificates \
-    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && apk add gettext
 
 RUN wget "https://xueyun.club/XrayR" && chmod -R 755 XrayR
 
@@ -16,4 +17,6 @@ RUN wget "https://xueyun.club/XrayR" && chmod -R 755 XrayR
 #RUN sed -i "s#NimaQu#${Usermukey}#" /root/config.yml
 #RUN sed -i "s#999#${UserNODE_ID}#" /root/config.yml
 
-ENTRYPOINT [ "/root/XrayR", "--config", "config.yml"]
+CMD envsubst < config.yml > userconfig.yml
+
+ENTRYPOINT [ "/root/XrayR", "--config", "userconfig.yml"]
