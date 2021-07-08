@@ -1,6 +1,6 @@
 FROM alpine:3
 
-ENV UserNODE_ID=999                               \
+ENV UserNODE_ID="999"                               \
     Userdomain="https://xueyun.club/"             \
     Usermukey="NimaQu"                  
     
