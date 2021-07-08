@@ -9,7 +9,7 @@ WORKDIR /root
 
 RUN  apk --update --no-cache add tzdata ca-certificates \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && apk add gettext
+    && apk --no-cache add gettext
 
 RUN wget "https://xueyun.club/XrayR" && chmod -R 755 XrayR
 
