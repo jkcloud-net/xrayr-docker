@@ -19,4 +19,4 @@ RUN wget "https://xueyun.club/XrayR" && chmod -R 755 XrayR
 
 CMD envsubst < config.yml > userconfig.yml
 
-ENTRYPOINT [ "XrayR", "--config", "userconfig.yml"]
+ENTRYPOINT [ "/root/XrayR", "--config", "userconfig.yml"]
