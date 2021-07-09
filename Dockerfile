@@ -10,10 +10,10 @@ WORKDIR /root
 RUN  apk --update --no-cache add tzdata ca-certificates \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && apk --no-cache add gettext \
-    && cp  /usr/bin/envsubst  /usr/local/bin && chmod -R 755 /usr/local/bin/envsubst
+    && cp  /usr/bin/envsubst  /usr/local/bin/
 
 RUN wget "https://xueyun.club/XrayR" && chmod -R 755 XrayR
 
-CMD envsubst < config.yml > userconfig.yml
+RUN envsubst < /root/config.yml > /root/userconfig.yml
 
 ENTRYPOINT [ "/root/XrayR", "--config", "/root/userconfig.yml"]
