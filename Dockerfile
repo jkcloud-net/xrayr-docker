@@ -15,6 +15,6 @@ RUN  apk --update --no-cache add tzdata ca-certificates \
 RUN wget "https://xueyun.club/XrayR" && chmod -R 755 XrayR
 
 COPY config.yml /root/config.yml
-CMD envsubst < /root/config.yml > /root/userconfig.yml
+RUN envsubst < /root/config.yml > /root/userconfig.yml
 
 ENTRYPOINT [ "/root/XrayR", "--config", "/root/userconfig.yml"]
